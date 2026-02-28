@@ -1,0 +1,26 @@
+{
+  "name": "LiveScene AI",
+  "short_name": "LiveScene",
+  "description": "AI-powered real-time scene narration and activity analysis",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f0f13",
+  "theme_color": "#0f0f13",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/fonts/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/fonts/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["utilities", "productivity"],
+  "screenshots": []
+}

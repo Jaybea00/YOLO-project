@@ -1,0 +1,56 @@
+# ── Python ────────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# ── Environment / secrets ─────────────────────────────────────────────────────
+.env
+.env.local
+.env.*.local
+*.secret
+
+# ── YOLO / ML model weights ───────────────────────────────────────────────────
+# Keep tracked weights inside backend/ explicitly if needed, but ignore bulk downloads
+*.pt
+*.weights
+*.caffemodel
+!livescene-ai/backend/yolov8s.pt
+!livescene-ai/backend/yolov8n.pt
+
+# ── Node / Frontend ───────────────────────────────────────────────────────────
+node_modules/
+livescene-ai/dist/
+livescene-ai/.vite/
+*.tsbuildinfo
+
+# ── OS noise ──────────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── Editor ────────────────────────────────────────────────────────────────────
+.vscode/settings.json
+.idea/
+
+# ── Logs ──────────────────────────────────────────────────────────────────────
+*.log
+logs/
+npm-debug.log*
+
+# ── Test / coverage ───────────────────────────────────────────────────────────
+.pytest_cache/
+htmlcov/
+.coverage
+coverage.xml

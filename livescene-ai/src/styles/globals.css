@@ -1,0 +1,143 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Google Fonts are loaded via index.html ─────────────────────────── */
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: #0a0a0f;
+    color: #f0f0ff;
+    font-family: "Inter", system-ui, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Syne", "Inter", sans-serif;
+    line-height: 1.2;
+  }
+
+  code,
+  pre,
+  .font-mono {
+    font-family: "JetBrains Mono", "Fira Code", monospace;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  ::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 999px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  ::selection {
+    background: rgba(108, 99, 255, 0.35);
+    color: #fff;
+  }
+}
+
+@layer components {
+  /* Glass card */
+  .glass-card {
+    @apply rounded-2xl border border-white/8 bg-dark-700/80 backdrop-blur-sm shadow-card;
+  }
+
+  /* Neon text gradient */
+  .text-gradient {
+    @apply bg-gradient-to-r from-brand to-neon-cyan bg-clip-text text-transparent;
+  }
+
+  /* Pulse glow */
+  .glow-brand {
+    box-shadow: 0 0 20px rgba(108, 99, 255, 0.4);
+  }
+
+  /* Scanner line container */
+  .scanner-line {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .scanner-line::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(
+      to right,
+      transparent,
+      rgba(108, 99, 255, 0.6),
+      transparent
+    );
+    animation: scanLine 3s linear infinite;
+  }
+}
+
+@layer utilities {
+  .border-white\/8 {
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+
+  .bg-white\/8 {
+    background-color: rgba(255, 255, 255, 0.08);
+  }
+
+  /* Hide scrollbar visually but keep functional */
+  .scrollbar-hide,
+  .scrollbar-none {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar,
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* iOS safe-area bottom padding (for notch / home indicator) */
+  .safe-area-pb {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+
+  /* Touch-action: prevent double-tap zoom on interactive elements */
+  .touch-manipulation {
+    touch-action: manipulation;
+  }
+}
